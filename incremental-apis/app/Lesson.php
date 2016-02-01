@@ -10,5 +10,5 @@ class Lesson extends Model
 
     // Hide data when it cast to an array or JSON.
     // Laravel makes this easier, but you shouldn't rely on it.
-    protected $hidden = ['title'];
+//    protected $hidden = ['title'];
 }

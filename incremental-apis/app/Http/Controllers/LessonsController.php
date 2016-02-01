@@ -28,7 +28,7 @@ class LessonsController extends Controller
         $lessons = Lesson::all();
 
         return response()->json([
-           'data' => $lessons->toArray()
+           'data' => $this->transform($lessons)
         ], 200);
     }
 
@@ -42,6 +42,12 @@ class LessonsController extends Controller
 
     }
 
+    /**
+     * Display the specified resource.
+     *
+     * @param $id
+     * @return mixed
+     */
     public function show($id)
     {
         $lesson = Lesson::find($id);
@@ -60,5 +66,30 @@ class LessonsController extends Controller
             'data' => 'Lesson does not exist',
 //                    'code' => 195
         ], 200);
+    }
+
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+
+    private function transform($lessons)
+    {
+        return array_map(function($lessons)
+        {
+            return [
+                'title'  => $lessons['title'],
+                'body'   => $lessons['body'],
+                'active' => $lessons['some_bool'],
+            ];
+        }, $lessons->toArray());
     }
 }
