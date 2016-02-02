@@ -43,10 +43,11 @@ class LessonsController extends ApiController
 
         $lessons = Lesson::all();
 
-        return response()->json([
+//        return response()->json([
+        return $this->respond([
 //           'data' => $this->lessonTransformer->transformCollection($lessons->toArray())
            'data' => $this->lessonTransformer->transformCollection($lessons->all())
-        ], 200);
+        ]);
     }
 
     /**
@@ -82,10 +83,11 @@ class LessonsController extends ApiController
 //            ], 404);
         }
 
-        return response()->json([
+//        return response()->json([
+        return $this->respond([
 //            'data' => $this->transform($lesson->toArray()),
             'data' => $this->lessonTransformer->transform($lesson)
-        ], 200);
+        ]);
     }
 
 
