@@ -10,7 +10,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-class LessonsController extends Controller
+//class LessonsController extends Controller
+class LessonsController extends ApiController
 {
     /**
      * @var App\Acme\Transformers\LessonTransformer
@@ -70,12 +71,15 @@ class LessonsController extends Controller
 
         if ( ! $lesson)
         {
-            return response()->json([
-                'error' => [
-                    'message' => 'Lesson does not exist',
-//                    'code' => 195
-                ]
-            ], 404);
+            return $this->respondNotFound('Lesson does not exist');
+//            return $this->respondWithError(404, 'Lesson does not exist');
+
+//            return response()->json([
+//                'error' => [
+//                    'message' => 'Lesson does not exist',
+////                    'code' => 195
+//                ]
+//            ], 404);
         }
 
         return response()->json([
