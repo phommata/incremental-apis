@@ -25,6 +25,8 @@ class LessonsController extends ApiController
     public function __construct(LessonTransformer $lessonTransformer)
     {
         $this->lessonTransformer = $lessonTransformer;
+
+        $this->middleware('auth.basic', ['only' => 'post']);
     }
 
     /**
@@ -90,6 +92,25 @@ class LessonsController extends ApiController
         ]);
     }
 
+    public function store(Request $request)
+    {
+//        dd('store');
+        if ( ! $request->input('title') or ! $request->input('body'))
+        {
+            // return some kind of response
+            // 400 Bad Request, 403 Forbidden, 422 Unproccesable entity
+            // provide a message
+            return $this->setStatusCode(422)
+                        ->respondWithError('Parameters failed validation for a lesson');
+        }
+
+        Lesson::create($request->all());
+
+        return $this->setStatusCode(201)->respond([
+//            'status'  => 'success',
+            'message' => 'Lesson sucessfully created.',
+        ]);
+    }
 
     /**
      * Remove the specified resource from storage.
