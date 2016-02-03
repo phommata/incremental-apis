@@ -106,10 +106,7 @@ class LessonsController extends ApiController
 
         Lesson::create($request->all());
 
-        return $this->setStatusCode(201)->respond([
-//            'status'  => 'success',
-            'message' => 'Lesson sucessfully created.',
-        ]);
+        return $this->respondCreated('Lesson successfully created.');
     }
 
     /**
@@ -122,4 +119,6 @@ class LessonsController extends ApiController
     {
         //
     }
+
+
 }

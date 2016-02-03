@@ -13,6 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class ApiController extends Controller
 {
+//    const HTTP_NOT_FOUND = 404;
     /**
      * @var int
      */
@@ -51,7 +52,8 @@ class ApiController extends Controller
 //            ]
 //
 //        ]);
-        return $this->setStatusCode(404)->respondWithError($message);
+//        return $this->setStatusCode(self::HTTP_NOT_FOUND)->respondWithError($message);
+        return $this->setStatusCode(Response::HTTP_NOT_FOUND)->respondWithError($message);
     }
 
     public function respondInternalError($message = 'Internal Error!') // return $this->respondInternalError()
@@ -81,6 +83,18 @@ class ApiController extends Controller
                 'status_code' => $this->getStatusCode(),
             ]
 
+        ]);
+    }
+
+    /**
+     * @param $message
+     * @return mixed
+     */
+    protected function respondCreated($message)
+    {
+        return $this->setStatusCode(201)->respond([
+//            'status'  => 'success',
+            'message' => $message,
         ]);
     }
 
