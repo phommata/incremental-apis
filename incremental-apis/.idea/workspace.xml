@@ -111,8 +111,8 @@
       <file leaf-file-name="DatabaseSeeder.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.32069972">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.45189506">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
               <folding>
                 <element signature="e#7#38#0#PHP" expanded="true" />
               </folding>
@@ -152,8 +152,8 @@
         <option value="$PROJECT_DIR$/database/migrations/2016_02_03_013209_create_lesson_tag_pivot_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/TagsTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/LessonsTagTableSeeder.php" />
-        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/LessonTagTableSeeder.php" />
+        <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
       </list>
     </option>
   </component>
@@ -928,8 +928,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32069972">
-          <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="42" />
+        <state vertical-scroll-proportion="0.45189506">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
           <folding>
             <element signature="e#7#38#0#PHP" expanded="true" />
           </folding>

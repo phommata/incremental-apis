@@ -8,6 +8,15 @@ use App\Tag;
 class DatabaseSeeder extends Seeder
 {
     /**
+     * @var array
+     */
+    private $tables = [
+        'lessons',
+        'tags',
+        'lesson_tag'
+    ];
+
+    /**
      * Run the database seeds.
      *
      * @return void
@@ -16,14 +25,7 @@ class DatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        DB::statement('SET FOREIGN_KEY_CHECKS=0');
-
-        Lesson::truncate();
-        Tag::truncate();
-        DB::table('lesson_tag')->truncate();
-//        DB::table('lessons')->truncate();
-
-        DB::statement('SET FOREIGN_KEY_CHECKS=1');
+        $this->cleanDatabase();
 
         // $this->call(UserTableSeeder::class);
 
@@ -32,5 +34,20 @@ class DatabaseSeeder extends Seeder
         $this->call(LessonTagTableSeeder::class);
 
         Model::reguard();
+    }
+
+    /**
+     *
+     */
+    private function cleanDatabase()
+    {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0');
+
+        foreach ($this->tables as $tableName)
+        {
+            DB::table($tableName)->truncate();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1');
     }
 }
