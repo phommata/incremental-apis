@@ -1,11 +1,5 @@
 <?php namespace App\Acme\Transformers;
 
-/**
- * Created by PhpStorm.
- * User: andrewphommathep
- * Date: 2/1/16
- * Time: 9:20 PM
- */
 class LessonTransformer extends Transformer
 {
     /**

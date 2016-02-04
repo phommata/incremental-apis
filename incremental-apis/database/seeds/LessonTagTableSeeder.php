@@ -5,12 +5,6 @@ use Faker\Factory as Faker;
 use App\Lesson;
 use App\Tag;
 
-/**
- * Created by PhpStorm.
- * User: andrewphommathep
- * Date: 2/2/16
- * Time: 5:50 PM
- */
 class LessonTagTableSeeder extends Seeder
 {
     /**
