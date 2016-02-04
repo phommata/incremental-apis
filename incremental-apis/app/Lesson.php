@@ -9,7 +9,7 @@ class Lesson extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'body'];
+    protected $fillable = ['title', 'body', 'some_bool'];
 
     // Hide data when it cast to an array or JSON.
     // Laravel makes this easier, but you shouldn't rely on it.
