@@ -27,7 +27,7 @@ class TagsController extends ApiController
      */
     public function index($lessonId = null)
     {
-        $tags = $lessonId ? Lesson::find($lessonId)->tags : Tag::all(); // all is bad
+        $tags = $this->getTags($lessonId);
 //
         return $this->respond([
             'data' => $this->tagTransformer->transformCollection($tags->all()),
@@ -42,5 +42,14 @@ class TagsController extends ApiController
     public function create()
     {
 
+    }
+
+    /**
+     * @param $lessonId
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
+     */
+    private function getTags($lessonId)
+    {
+        return $lessonId ? Lesson::findOrFail($lessonId)->tags : Tag::all(); // all is bad
     }
 }
