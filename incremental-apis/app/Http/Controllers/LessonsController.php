@@ -47,10 +47,10 @@ class LessonsController extends ApiController
         $limit = request('limit') ?: 3;
         $lessons = Lesson::paginate($limit);
 
-//        dd(get_class_methods($lessons));
+//        dd(get_class_methods(paginate()));
 
 //        return response()->json([
-        return $this->respondWithPagination($lessons,[
+        return $this->respondWithPagination($lessons, [
             'data' => $this->lessonTransformer->transformCollection($lessons->all()),
         ]);
     }

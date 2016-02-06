@@ -1,14 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: andrewphommathep
- * Date: 2/2/16
- * Time: 1:57 PM
- */
 
 namespace App\Http\Controllers;
 
 
+use Illuminate\Pagination\LengthAwarePaginator;
 use Symfony\Component\HttpFoundation\Response;
 
 class ApiController extends Controller
@@ -72,11 +67,11 @@ class ApiController extends Controller
     }
 
     /**
-     * @param Paginator $lessons
+     * @param LengthAwarePaginator $lessons
      * @param $data
      * @return mixed
      */
-    protected function respondWithPagination(Paginator $lessons, $data)
+    protected function respondWithPagination(LengthAwarePaginator $lessons, $data)
     {
         $data = array_merge($data, [
             'paginator' => [
