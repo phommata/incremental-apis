@@ -43,12 +43,22 @@ class LessonsController extends ApiController
         // 4. No way to signal headers/response codes
 //        return Lesson::all(); // really bad practice
 
-        $lessons = Lesson::all();
+//        $lessons = Lesson::all();
+        $limit = request('limit') ?: 3;
+        $lessons = Lesson::paginate($limit);
+
+//        dd(get_class_methods($lessons));
 
 //        return response()->json([
         return $this->respond([
 //           'data' => $this->lessonTransformer->transformCollection($lessons->toArray())
-           'data' => $this->lessonTransformer->transformCollection($lessons->all())
+           'data' => $this->lessonTransformer->transformCollection($lessons->all()),
+            'paginator' => [
+                'total_count' => $lessons->total(),
+                'total_pages' => ceil($lessons->total() / $lessons->perPage()),
+                'current_page' => $lessons->currentPage(),
+                'limit' => $lessons->perPage()
+            ]
         ]);
     }
 
