@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="cbed15ec-d47f-476a-84ce-791d42fb2dc1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/incremental-apis/app/Http/Controllers/LessonsController.php" afterPath="$PROJECT_DIR$/incremental-apis/app/Http/Controllers/LessonsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="incremental-apis.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -100,8 +99,8 @@
       <file leaf-file-name="LessonsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/incremental-apis/app/Http/Controllers/LessonsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.16034986">
-              <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.7376093">
+              <caret line="131" column="44" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="44" />
               <folding>
                 <element signature="e#40#84#0#PHP" expanded="true" />
               </folding>
@@ -572,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/incremental-apis/app/Http/Controllers/LessonsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16034986">
-          <caret line="55" column="11" selection-start-line="55" selection-start-column="11" selection-end-line="55" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.7376093">
+          <caret line="131" column="44" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="44" />
           <folding>
             <element signature="e#40#84#0#PHP" expanded="true" />
           </folding>

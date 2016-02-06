@@ -50,15 +50,8 @@ class LessonsController extends ApiController
 //        dd(get_class_methods($lessons));
 
 //        return response()->json([
-        return $this->respond([
-//           'data' => $this->lessonTransformer->transformCollection($lessons->toArray())
-           'data' => $this->lessonTransformer->transformCollection($lessons->all()),
-            'paginator' => [
-                'total_count' => $lessons->total(),
-                'total_pages' => ceil($lessons->total() / $lessons->perPage()),
-                'current_page' => $lessons->currentPage(),
-                'limit' => $lessons->perPage()
-            ]
+        return $this->respondWithPagination($lessons,[
+            'data' => $this->lessonTransformer->transformCollection($lessons->all()),
         ]);
     }
 
@@ -128,6 +121,26 @@ class LessonsController extends ApiController
     public function destroy($id)
     {
         //
+    }
+
+
+    /**
+     * @param $lessons
+     * @param $data
+     * @return mixed
+     */
+    protected function respondWithPagination($lessons, $data)
+    {
+        $data = array_merge($data, [
+            'paginator' => [
+                'total_count' => $lessons->total(),
+                'total_pages' => ceil($lessons->total() / $lessons->perPage()),
+                'current_page' => $lessons->currentPage(),
+                'limit' => $lessons->perPage()
+            ]
+        ]);
+
+        return $this->respond($data);
     }
 
 
